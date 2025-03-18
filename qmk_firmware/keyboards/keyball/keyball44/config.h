@@ -30,7 +30,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Split parameters
 #define SOFT_SERIAL_PIN         D2
 #define SPLIT_HAND_MATRIX_GRID  F7, D4
+#define SPLIT_HAND_MATRIX_GRID_LOW_IS_LEFT // add
 #define SPLIT_USB_DETECT
+#define SPLIT_USB_TIMEOUT 1000 // add
 #ifdef OLED_ENABLE
 #    define SPLIT_OLED_ENABLE
 #endif
@@ -45,7 +47,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // RGB LED settings
 #define WS2812_DI_PIN       D3
 #ifdef RGBLIGHT_ENABLE
-#    define RGBLED_NUM      60
+// #    define RGBLED_NUM      60 // not working: https://github.com/Yowkees/keyball/issues/726
+#    define RGBLIGHT_LED_COUNT 60
 #    define RGBLED_SPLIT    { 30, 30 }  // (30 + 29)
 #    ifndef RGBLIGHT_LIMIT_VAL
 #        define RGBLIGHT_LIMIT_VAL  150 // limitated for power consumption
